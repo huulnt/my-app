@@ -14,6 +14,21 @@ import { HeaderComponent } from './layout/header/header.component';
 import { LoaderComponent } from './layout/loader/loader.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("85545041355-icq64qvv9sg7rkfb3l61sqeec0q6vv7s.apps.googleusercontent.com")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("1841864462555190")
+  }
+]);
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,10 +42,15 @@ import { ProfileComponent } from './components/profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SocialLoginModule
   ],
   providers: [
-    CanActiveLogin
+    CanActiveLogin,
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
   ],
   bootstrap: [AppComponent]
 })

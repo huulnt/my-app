@@ -1,43 +1,64 @@
 <div class="login">
-  <!-- Login -->
-  <div class="login__block toggled" id="l-login">
-      <div class="login__block__header">
-          <i class="zmdi zmdi-account-circle"></i>
-          Hi there! Please Sign in
+    <!-- Login -->
+    <div class="login__block toggled" id="l-login">
+        <div class="login__block__header">
+            <i class="zmdi zmdi-account-circle"></i>
+            Hi there! Please Sign in
 
-          <div class="actions login__block__actions">
-              <div class="dropdown">
-                  <a data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
+            <div class="actions login__block__actions">
+                <div class="dropdown">
+                    <a data-toggle="dropdown">
+                        <i class="zmdi zmdi-more-vert"></i>
+                    </a>
 
-                  <ul class="dropdown-menu pull-right">
-                      <li><a href="/register" >Create an account</a></li>
-                      <li><a data-block="#l-forget-password" >Forgot password?</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
+                    <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a href="/register">Create an account</a>
+                        </li>
+                        <li>
+                            <a data-block="#l-forget-password">Forgot password?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-      <div class="login__block__body">
-          <div class="form-group form-group--float form-group--centered form-group--centered">
-              <input type="text" class="form-control">
-              <label>Email Address</label>
-              <i class="form-group__bar"></i>
-          </div>
+        <div class="login__block__body">
+            <div class="form-group form-group--float form-group--centered form-group--centered">
+                <input type="text" class="form-control">
+                <label>Email Address</label>
+                <i class="form-group__bar"></i>
+            </div>
 
-          <div class="form-group form-group--float form-group--centered form-group--centered">
-              <input type="password" class="form-control">
-              <label>Password</label>
-              <i class="form-group__bar"></i>
-          </div>
+            <div class="form-group form-group--float form-group--centered form-group--centered">
+                <input type="password" class="form-control">
+                <label>Password</label>
+                <i class="form-group__bar"></i>
+            </div>
 
-          <button class="btn btn--light btn--icon m-t-15"><i class="zmdi zmdi-long-arrow-right"></i></button>
-      </div>
-  </div>
+            <button class="btn btn--light btn--icon m-t-15">
+                <i class="zmdi zmdi-long-arrow-right"></i>
+            </button>
+            <div class="card widget-recent-signups">
+                <div class="card__body widget-recent-signups__list">
+                    <a (click)="signInWithFB()">
+                        <img class="avatar-img widget-profile__img" style="background-color: white" src="../../assets/images/facebook.png" alt="">
+                    </a>
+                    <a>
+                        <img class="avatar-img widget-profile__img" style="background-color: white" src="../../assets/images/twitter.png" alt="">
+                    </a>
+                    <a  (click)="signInWithGoogle()">
+                        <img class="avatar-img widget-profile__img" style="background-color: white" src="../../assets/images/google-plus.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
- 
 
-  <!-- Forgot Password -->
-  <!-- <div class="login__block" id="l-forget-password">
+
+    <!-- Forgot Password -->
+    <!-- <div class="login__block" id="l-forget-password">
       <div class="login__block__header palette-Purple bg">
           <i class="zmdi zmdi-account-circle"></i>
           Forgot Password?
